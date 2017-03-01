@@ -265,7 +265,12 @@ function engine_getinfo($force_read=false) {
 				$verinfo = $response['data'];
 			} else {
 				// could not connect to asterisk manager, try console
-				$verinfo = exec('asterisk -V');
+				$loc = fpbx_which("asterisk");
+				if(empty($loc)) {
+					throw new \Exception(_("Unable to find the Asterisk binary"));
+				} else {
+					$verinfo = exec($loc . ' -V');
+				}
 			}
 
 			if (preg_match('/Asterisk (\d+(\.\d+)*)(-?(\S*))/', $verinfo, $matches)) {

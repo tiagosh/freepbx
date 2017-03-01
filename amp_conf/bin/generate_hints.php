@@ -6,7 +6,7 @@
 //include bootstrap
 $restrict_mods = true;
 $bootstrap_settings['freepbx_auth'] = false;
-include_once '/etc/freepbx.conf';
+include_once getenv('INSTALL_PREFIX_DATA').'/etc/freepbx.conf';
 
 // If set to nointercom then don't generate any hints
 //

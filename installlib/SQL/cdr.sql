@@ -1,5 +1,5 @@
 CREATE TABLE cdr (
-   calldate datetime NOT NULL default '0000-00-00 00:00:00',
+   calldate datetime NOT NULL default '1970-01-01 00:00:01',
    clid varchar(80) NOT NULL default '',
    src varchar(80) NOT NULL default '',
    dst varchar(80) NOT NULL default '',

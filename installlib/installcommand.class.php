@@ -33,6 +33,10 @@ class FreePBXInstallCommand extends Command {
 			'default' => '',
 	 		'description' => 'Database password',
 		),
+		'dbhost' => array(
+			'default' => 'localhost',
+			'description' => 'Database host',
+		),
 		'user' => array(
 			'default' => 'asterisk',
 	 		'description' => 'File owner user'
@@ -95,6 +99,9 @@ class FreePBXInstallCommand extends Command {
 	);
 
 	protected function configure() {
+		$install_prefix = getenv('INSTALL_PREFIX');
+		$install_prefix_data = getenv('INSTALL_PREFIX_DATA');
+
 		$this
 			->setName('install')
 			->setDescription('FreePBX Installation Utility')
@@ -111,7 +118,7 @@ class FreePBXInstallCommand extends Command {
 			$this->settings['ampplayback']['default'] = '/var/spool/asterisk/playback';
 			$this->settings['webroot']['default'] = '/usr/local/www/freepbx';
 		} else {
-			$this->settings['astmoddir']['default'] = file_exists('/usr/lib64/asterisk/modules') ? '/usr/lib64/asterisk/modules' : '/usr/lib/asterisk/modules';
+			$this->settings['astmoddir']['default'] = file_exists('/usr/lib64/asterisk/modules') ? '/usr/lib64/asterisk/modules' : $install_prefix.'/usr/lib/asterisk/modules';
 		}
 
 		foreach ($this->settings as $key => $setting) {
@@ -131,6 +138,12 @@ class FreePBXInstallCommand extends Command {
 
 	protected function execute(InputInterface $input, OutputInterface $output) {
 		global $amp_conf; /* This makes pandas sad. :( */
+		$install_prefix = getenv('INSTALL_PREFIX');
+		$install_prefix_data = getenv('INSTALL_PREFIX_DATA');
+		$asterisk_cmd = getenv('ASTERISK_CMD');
+		if (empty($asterisk_cmd)) {
+			$asterisk_cmd = "asterisk";
+		}
 
 		if (version_compare(PHP_VERSION, '5.3.3', '<')) {
 			//charset=utf8 requires php 5.3.6 (http://php.net/manual/en/mysqlinfo.concepts.charset.php)
@@ -152,14 +165,14 @@ class FreePBXInstallCommand extends Command {
 		$output->getFormatter()->setStyle('bold', $style);
 
 		//STATIC???
-		define("AMP_CONF", "/etc/amportal.conf");
-		define("ODBC_INI", "/etc/odbc.ini");
+		define("AMP_CONF", $install_prefix_data."/etc/amportal.conf");
+		define("ODBC_INI", $install_prefix_data."/etc/odbc.ini");
 		if (PHP_OS == "FreeBSD") {
 			define("ASTERISK_CONF", "/usr/local/etc/asterisk/asterisk.conf");
 		} else {
-			define("ASTERISK_CONF", "/etc/asterisk/asterisk.conf");
+			define("ASTERISK_CONF", $install_prefix_data."/etc/asterisk/asterisk.conf");
 		}
-		$freepbx_conf_path = "/etc/freepbx.conf";
+		$freepbx_conf_path = $install_prefix_data."/etc/freepbx.conf";
 		define("FILES_DIR",$this->rootPath."/installlib/files");
 		define("SQL_DIR", $this->rootPath."/installlib/SQL");
 		define("MODULE_DIR", $this->rootPath."/amp_conf/htdocs/admin/modules");
@@ -266,7 +279,7 @@ class FreePBXInstallCommand extends Command {
 		$c = 0;
 		$determined = false;
 		while($c < 5) {
-			exec("sudo -u " . $answers['user'] . " asterisk -rx 'core show version' 2>&1", $tmpout, $ret);
+			exec("$asterisk_cmd -rx 'core show version' 2>&1", $tmpout, $ret);
 			if ($ret != 0) {
 				$output->writeln("<error>Error!</error>");
 				$output->writeln("<error>Error communicating with Asterisk.  Ensure that Asterisk is properly installed and running as the ".$answers['user']." user</error>");
@@ -367,11 +380,12 @@ class FreePBXInstallCommand extends Command {
 
 		if ($newinstall || $force) {
 			$amp_conf['AMPMGRUSER'] = 'admin';
-			$amp_conf['AMPMGRPASS'] = md5(uniqid());
+                        // FIXME - use a non default password
+			$amp_conf['AMPMGRPASS'] = 'amp111';
 
 			$amp_conf['AMPDBUSER'] = $answers['dbuser'];
 			$amp_conf['AMPDBPASS'] = $answers['dbpass'];
-			$amp_conf['AMPDBHOST'] = 'localhost';
+			$amp_conf['AMPDBHOST'] = $answers['dbhost'];
 
 			if($dbroot) {
 				$output->write("Database Root installation checking credentials and permissions..");
@@ -453,7 +467,7 @@ class FreePBXInstallCommand extends Command {
 					$pdodb->query("DROP DATABASE IF EXISTS ".$amp_conf['AMPDBNAME']);
 				}
 				$pdodb->query("CREATE DATABASE IF NOT EXISTS ".$amp_conf['AMPDBNAME']." DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci");
-				$sql = "GRANT ALL PRIVILEGES ON ".$amp_conf['AMPDBNAME'].".* TO '" . $amp_conf['AMPDBUSER'] . "'@'localhost' IDENTIFIED BY '" . $amp_conf['AMPDBPASS'] . "'";
+				$sql = "GRANT ALL PRIVILEGES ON ".$amp_conf['AMPDBNAME'].".* TO '" . $amp_conf['AMPDBUSER'] . "'@'%' IDENTIFIED BY '" . $amp_conf['AMPDBPASS'] . "'";
 				$pdodb->query($sql);
 			} else {
 				//check collate
@@ -476,7 +490,7 @@ class FreePBXInstallCommand extends Command {
 					$db->query("DROP DATABASE IF EXISTS ".$amp_conf['CDRDBNAME']);
 				}
 				$db->query("CREATE DATABASE IF NOT EXISTS ".$amp_conf['CDRDBNAME']." DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci");
-				$sql = "GRANT ALL PRIVILEGES ON ".$amp_conf['CDRDBNAME'].".* TO '" . $amp_conf['AMPDBUSER'] . "'@'localhost' IDENTIFIED BY '" . $amp_conf['AMPDBPASS'] . "'";
+				$sql = "GRANT ALL PRIVILEGES ON ".$amp_conf['CDRDBNAME'].".* TO '" . $amp_conf['AMPDBUSER'] . "'@'%' IDENTIFIED BY '" . $amp_conf['AMPDBPASS'] . "'";
 				$db->query($sql);
 			} else {
 				//check collate
@@ -674,7 +688,7 @@ class FreePBXInstallCommand extends Command {
 
 		//setup and get manager working
 		$output->write("Setting up Asterisk Manager Connection...");
-		exec("sudo -u " . $answers['user'] ." asterisk -rx 'module reload manager'",$o,$r);
+		exec("$asterisk_cmd -rx 'module reload manager'",$o,$r);
 		if($r !== 0) {
 			$output->writeln("<error>Unable to reload Asterisk Manager</error>");
 			exit(127);
@@ -761,7 +775,7 @@ require_once('{$amp_conf['AMPWEBROOT']}/admin/bootstrap.php');
 
 		// generate_configs();
 		$output->writeln("Generating default configurations...");
-		system("sudo -u " . $amp_conf['AMPASTERISKUSER'] . " " . $amp_conf["AMPSBIN"] . "/fwconsole reload");
+		system($amp_conf["AMPSBIN"] . "/fwconsole reload");
 		$output->writeln("Finished generating default configurations");
 
 		// GPG setup - trustFreePBX();

@@ -1238,7 +1238,7 @@ if (!function_exists('parse_amportal_conf')) {
 		if (!is_object($db)) {
 			$restrict_mods = true;
 			$bootstrap_settings['skip_astman'] = true;
-			include_once '/etc/freepbx.conf';
+			include_once getenv('INSTALL_PREFIX_DATA').'/etc/freepbx.conf';
 		}
 
 		$freepbx_conf =& freepbx_conf::create();

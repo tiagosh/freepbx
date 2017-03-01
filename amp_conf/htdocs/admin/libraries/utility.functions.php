@@ -842,6 +842,12 @@ function dbug_printtree($dir, $indent = "\t") {
  * @return string
  */
 function fpbx_which($app) {
+	if ($app == "asterisk") {
+		$asterisk_cmd = getenv('ASTERISK_CMD');
+		if (!empty($asterisk_cmd)) {
+			return $asterisk_cmd;
+		}
+	}
 	$freepbx_conf = freepbx_conf::create();
 	$which = $freepbx_conf->get_conf_setting('WHICH_' . $app);
 

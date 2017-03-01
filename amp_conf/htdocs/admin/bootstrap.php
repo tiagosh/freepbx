@@ -176,7 +176,7 @@ if(!empty($phptimezone)) {
 // within the class, which is probably a direction we want to go to use the class.
 //
 $bootstrap_settings['amportal_conf_initialized'] = false;
-$amp_conf = $freepbx_conf->parse_amportal_conf("/etc/amportal.conf",$amp_conf);
+$amp_conf = $freepbx_conf->parse_amportal_conf(getenv('INSTALL_PREFIX_DATA')."/etc/amportal.conf",$amp_conf);
 
 if($amp_conf['PHP_CONSOLE']) {
 	$connector = PhpConsole\Connector::getInstance();

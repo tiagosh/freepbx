@@ -4268,8 +4268,9 @@ function core_devices2astdb(){
 				else
 				$vmcontext = $thisUser['voicemail'];
 				//voicemail symlink
-				exec("rm -f /var/spool/asterisk/voicemail/device/".$id);
-				exec("/bin/ln -s /var/spool/asterisk/voicemail/".$vmcontext."/".$user."/ /var/spool/asterisk/voicemail/device/".$id);
+				$astspooldir = $amp_conf['ASTSPOOLDIR'];
+				exec("rm -f $astspooldir/voicemail/device/".$id);
+				exec("/bin/ln -s $astspooldir/voicemail/".$vmcontext."/".$user."/ $astspooldir/voicemail/device/".$id);
 			}
 		}
 		return true;
@@ -4577,12 +4578,13 @@ function core_users_edit($extension, $vars){
 		// If the vmcontext has changed, we need to change all the links. In extension mode, the link
 		// to the current fixed device will get changed, but none others will
 		//
+		$astspooldir = $amp_conf['ASTSPOOLDIR'];
 		if ($current_vmcontext != $new_vmcontext) {
 			$user_devices = explode('&',$ud);
 			foreach ($user_devices as $user_device) {
-				exec("rm -f ".escapeshellarg("/var/spool/asterisk/voicemail/device/".$user_device));
+				exec("rm -f ".escapeshellarg($astspooldir."/voicemail/device/".$user_device));
 				if ($new_vmcontext != 'novm') {
-					exec("/bin/ln -s ".escapeshellarg("/var/spool/asterisk/voicemail/".$new_vmcontext."/".$extension."/")." ".escapeshellarg("/var/spool/asterisk/voicemail/device/".$user_device));
+					exec("/bin/ln -s ".escapeshellarg($astspooldir."/voicemail/".$new_vmcontext."/".$extension."/")." ".escapeshellarg($astspooldir."/voicemail/device/".$user_device));
 				}
 			}
 		}

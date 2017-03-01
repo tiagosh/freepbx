@@ -12,7 +12,7 @@
 	$bootstrap_settings['freepbx_auth'] = false;
 	$bootstrap_settings['skip_astman'] = true;//no need for astman here
 	$restrict_mods = true;//no need for modules here
-	include_once '/etc/freepbx.conf';
+	include_once getenv('INSTALL_PREFIX_DATA').'/etc/freepbx.conf';
 	foreach($amp_conf as $key => $val) {
 		if (is_bool($val)) {
 			echo "export " . trim($key) . "=" . ($val?"TRUE":"FALSE") ."\n";

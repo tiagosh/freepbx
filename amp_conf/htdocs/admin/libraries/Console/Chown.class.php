@@ -219,7 +219,7 @@ class Chown extends Command {
 														'perms' => 0774,
 														'always' => true);
 			$this->modfiles['framework'][] = array('type' => 'file',
-														'path' => '/etc/amportal.conf',
+														'path' => getenv('INSTALL_PREFIX_DATA').'/etc/amportal.conf',
 														'perms' => 0660,
 														'always' => true);
 			$this->modfiles['framework'][] = array('type' => 'file',

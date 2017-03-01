@@ -97,7 +97,7 @@ if (isset($_REQUEST['handler'])) {
 }
 
 // call bootstrap.php through freepbx.conf
-include_once '/etc/freepbx.conf';
+include_once getenv('INSTALL_PREFIX_DATA').'/etc/freepbx.conf';
 
 //check to make sure zend files aren't breaking the SPL autoloader.
 //if they are then tell the user to run said command below
