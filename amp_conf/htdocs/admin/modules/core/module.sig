@@ -1,0 +1,167 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+;################################################
+;#        FreePBX Module Signature File         #
+;################################################
+;# Do not alter the contents of this file!  If  #
+;# this file is tampered with, the module will  #
+;# fail validation and be marked as invalid!    #
+;################################################
+
+[config]
+version=1
+hash=sha256
+signedwith=86CE877469D2EAD9
+signedby='FreePBX Mirror 1 (Module Signing - 2014/2015) <security@freepbx.org>'
+repo=standard
+timestamp=1487115692.2883
+[hashes]
+Console/Trunks.class.php = 075bf55c5f67b256a414ef9f8315d345b8cd0d130cb85fd3a42c23c8b58f9fd1
+Core.class.php = bda3a6ed64b19e35170c147e631fe6d7a55d0c7a0e95cbd234eddb4b3043ba84
+LICENSE = 8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903
+README.md = 400522d14d3ec0141d64eb821eda87ed4d4328c182bfd7ca707af4857f5681fc
+XML_Parser.php = ee3b69934cabad22de507eaacac42647ad685e2278135edd4dfb54c0bddc2edb
+XML_Unserializer.php = 3e23d80a91b763abcf726179a5d4222381b5e8d1f78f30515eb24886134fe0be
+agi-bin/checksound.agi = 7db277b391942cb3059e88cde789d84f64536c3ff8ffe6c995d50da9833901c7
+agi-bin/dialparties.agi = 63cc31c13b5a36038117be411e686d79d73e5230148d028a7713560aaebe8aec
+agi-bin/directory = ceae5dceadc68ba88b7b1f5093f001fc7639e2cc0cbd5bd823eb4f0df82e20bb
+agi-bin/enumlookup.agi = 38e220adf69609f1e077798693817f4f3482bb50fd4e8d19740bbb202d2d4340
+agi-bin/fixlocalprefix = 4738a70bdda0904a6caa48888c89f508dad165971d6554693e13cf57966b5293
+agi-bin/list-item-remove.php = 14b55b1f9b46bc41f5f4a1a446d63473316acd811c67c4dee7be789bcba3a3cf
+agi-bin/sql.php = 1d9ed0aa8057b350a0ce0abb8317377686ede9127a7a07f358d80b2ceec8e1d0
+agi-bin/user_login_out.agi = 071aafc2647e455567ee16e78241c80828829e234d553c10a2714339862e6da3
+assets/css/core.css = dfbcaf07d10c116f3a231bd62724ea207a70d14207ea8ac411e3917158b6add6
+assets/js/advancedsettings/advancedsettings.js = 18ab96791087b575ab2a73cedb9857bbcf7d0b6841631bcfcbc82339efe9481f
+assets/js/ampusers/ampusers.js = 232099c71ae3a7eba869f115147d4394f81d8d88d13a293f4c29afc96f5edd66
+assets/js/astmodules/astmodules.js = a9073870a7df79cd9899a75fd882e972cbd1520dc3c2f1c10568254732ae2de3
+assets/js/dahdichandids/dahdichandids.js = a256392bef4690ba924604fc2a1e103b46dfd1a2d77374e62c95e8625a730cb8
+assets/js/devices/devices.js = aa5715314c4c294320138c1b01a7a99e7833acbe411f6382e130b15ca640355b
+assets/js/did/did.js = 9ae69f58d76955d9789c5d43f9c3ac70cb55ce63958a3b4fa6938cef2b9ae8ef
+assets/js/extensions/extensions.js = a99ec0325766a0f2efef260d48159a90ace9c07f419b0584a06cf75463cd0d4b
+assets/js/routing/routing.js = e67e0cba9013be6b0fd8c0c4255a6d15c1c266a5fd46176eb3ab8cf2d3dd9edd
+assets/js/trunks/trunks.js = a952d46dbc20c58879bad5a972312add9c3ff033841dca56b3f3caaa2ab65407
+assets/js/users/users.js = eef2476cd3b03dbb7b8a6c861d7ffe4c90686900926eca0f59a432e467494987
+assets/less/ampusers/bootstrap.less = c9e6630f7ce13d2c68bd9100f0f858bdff13fe5ebd2d8cab7b6b235922c79f12
+assets/less/devices/bootstrap.less = d82a4ea55e75c3196cd45fae3a908893f8abf7cb4541e9e00ea470ab03d61bbf
+assets/less/did/did.less = 06f8a0bb693363733cb4a9b46c513d0867e019465fa29c773af926fb980d37d5
+assets/less/extensions/bootstrap.less = daf6b80bdc30b826a27a8e2e7f3545cad28204c0851fb699f0e3d9078ac1da24
+assets/less/routing/boostrap.less = f26517396bed687dc2318a1d808db8a0b223d324d4fc3c1ff4e4c721e1d1c2e5
+assets/less/trunks/boostrap.less = 8abcc8bbadc14fa499945d52cbb011b5e4cd37beb466d7c389dd8d114f768724
+assets/less/users/bootstrap.less = 7851bd0c2b7f596c168eba18f7aae0fac731436d88bcddc0045986cf924f3b78
+etc/extensions.conf = 88228af8b136af8360f57e70abd252917a1e85fd5f6eb48eb6df6af58bf5ab54
+etc/features.conf = 1ae197ca8b060ace518890a424660f17f66419bd66f912da0c9c09d5095194b6
+etc/http.conf = c13f4db0871dbfbf3036a4e414a026ab752382a9d9eb1b5033f6a2827daf85d1
+etc/iax.conf = da201b7f690c1a9bed0b1ce72ae805c2e04be7fe00025ffc0fd8117c52e7319c
+etc/res_odbc.conf = a214f22b8bb48235db7ec370c3846260217b37c30dd098ab5afe86e6ab7465bd
+etc/rtp.conf = c1e5359910f9deda513b342e392a5a6bdec9dca69626fc011dfabf359a37d483
+etc/sip.conf = 5b5781b9a28425849a4e25ea682d1719b0c39a4efc10878e7081d63a1ac37e55
+etc/sip_notify.conf = 0fee44f60b30adf7d30862fca2baa8f47555b1a948da110d258b19d2129897f1
+etc/udptl.conf = 254d499e5d43b423c31ea7f080c20cdae9062888d8e79cd9b2904294fc9a9f80
+export.html.php = 4dba2a936361b866b8cc6ef10f01daddeb672fa4d7669657771975be705e8987
+functions.inc/Core_SipSettings.class.php = 61fdf9cbde656407c1a808fcb20f3dfa55305bbd61d1a2f8bc79d95ae2668e69
+functions.inc/Driver.class.php = 0921a25fe239b057222b43b7cb81496a1c0a420e655e2729872cdabb9634201a
+functions.inc/drivers/Custom.class.php = 12ee39c4b93478ecda3d65abee8a4d5258d9b5105d3f93165fbf9d1c2d2eb4ca
+functions.inc/drivers/Dahdi.class.php = 9f52cb436d1c4ea6f3db0c820655fc48e3524bd28c5b097e978c91c812c35b09
+functions.inc/drivers/Iax2.class.php = 4344a7e2dfc8f2d099672432dec135d623bea44cfd57e89e85809a5cde99350c
+functions.inc/drivers/PJSip.class.php = 267e4bf0282aa4d79f3f3dea048e75e08658bb8251f9175299868ce4a20cfdb9
+functions.inc/drivers/Sip.class.php = bd6dd80782ba4d297dc6bcb4146c35d65bec4fe3342baa410aace9b3aa7035c5
+functions.inc/drivers/Virtual.class.php = 0bb9be4d78533320ed313d228f704db26f5592920e8be5b8f9c8bafd39619ccd
+functions.inc/func-sipheaders.php = 504cbb03bdc2dc2198b64dcc86869945595c54d382a456cda216431506f0489b
+functions.inc/macro-dial-one.php = 9ca0e75e027210251f4a20b5bff21f4b29aef1e536cacfe2cb4d61a93b093490
+functions.inc/macro-dial.php = 4893f9c10b5083e1fb7724824b51bdd3493569ad1303d979de44d9a40dfad655
+functions.inc/macro-user-callerid.php = 8c70bf772434fae719a5c878381040d393dc263ead5fddd8f8cf9ac61fe204eb
+functions.inc.php = ec14bb2c9716c09573cd5997e26350cfd3bfc352e2b521ce54fbb38cac95694f
+hooks/logrotate = cbad2a43559b55aa85f76563f86d0f2fd273ddd19c85cfadedc6ace60f128219
+images/arrow_up_down.png = ca035ec6f9a1a2e3fcda0888c131bdf7038fbb32e3260ae38f20a9b7415708d7
+images/cog.png = 73bd21e518c03a9904199b19dc0a0b621e0b9fafcc9482e8b9623e05bb4cafb6
+images/core_add.png = c06a52df3361df380a02a45159a0858d6f7cd8cbc3f71ff732a65d6c25ea6af6
+images/core_delete.png = ce07a8b5022e59a1bde9690b720a6bf10fc9767db6512d14ebff2782ec62b5bf
+images/default-option.png = e65ff33d80110401713ce6b9501e42458e2ee8739a4f4b7c1270f6e690d4af63
+images/edit.png = 858a4033d92f654e344243bbc75a968c39c298bd7fa87b5b3c9fe6eca4161386
+images/email_edit.png = 4ac43b922af630a56d1e542ece79813b9ec8d1e74dd7fc33be6e1c008ed2b56d
+images/link.png = 02aa7107206d04e6a93ae48a274439dfe67cb8306b3a0755434f3d378e173d28
+images/resultset_bottom.png = 69ea859b6d3a0d33e02136ac56cf850c1c0a984b3c18dfc489ca48a203e89789
+images/resultset_down.png = da5923a9c7348420f1483545af85b5acfc290c6d5a3c35cc192698c3fa8e43d6
+images/resultset_top.png = f1a5fb73fd1f40fca75f5c72e99874725a4ca1d975dc0e6cc393044c34bff2b3
+images/resultset_up.png = b91c3c17308567d5b1ce0ef144b1115df056c86f711f869dc9cf78a217bdee13
+images/spinner.gif = f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c
+images/telephone_delete.png = 2c1547c6a68ff41c20538c1c4016fc7d3f5893239ec6facfc379cbabbb3e02d1
+images/telephone_edit.png = 9cc2c9feda86e97592075d52a978bc8705c62df612231856f1ecf3d11a35bccf
+images/telephone_key.png = 38b80bc403d82312ee368386381a996e7054ea90c643e5dcf37073d50462eceb
+images/user_add.png = 7c5f28cfc605c1aba58fd8987edec1ced2c199341180102054245ec44a51c36f
+images/user_delete.png = 3f9f39b5d2ad830a5741081f39a1ad9dad8ba6fe9680dcd984ce3682be338a8d
+images/user_edit.png = 6e8b4a0ee3fa981575db2f39a0463debfe7096a6b45285a4bdd4de6889f32f66
+images/user_go.png = 3f84058ff83c7120f210489918378bed007330dc046cebac1e8beb883f725f3b
+install.php = 59348cffb55194615e906f7fae9cd487ef3e2485df3d010baa1b027c80333c97
+module.xml = 55b2d5237650eb0b8e1f8dcbb996f1a3c4ecd007dc8b865a97afe234f0467179
+page.advancedsettings.php = 6a5409fd0804da1e2e48453ce21dda706424d42da07d974587a750ae6986a43d
+page.ampusers.php = 6edc09bbd75d78f6609f31acc15be3ee6b0c52bfede097bf8d618d7a5a43345a
+page.astmodules.php = 0ee4105a45ae8f1da4e91493968de5d1135e6a7fbd22536553bcb376cbd17b31
+page.dahdichandids.php = 6e942ead6e1154502bb9a8da3bfc913728ca2e2c25f6e7eb46552b325e4ac729
+page.devices.php = 0eef4324a5e8250fe2e16aeec16ab43fafbca1037074f923a3f6a2becc42e233
+page.did.php = e239bd8019d2a4043dab25912ab83385836bfccc677a4d9ca0d3487d848086ae
+page.extensions.php = d2cd5fd76b8807f9f9b66d8056b745692a790867fbba2c335a1c33fbea1bcc63
+page.routing.php = 15a60cf17fa6ca74251b74f55c5da31d885e79b733708171583ab046ca549370
+page.trunks.php = 880d5b238e04fb6786b7e0640e9b9af7b3b17bccec0f1329774cde90078561ec
+page.users.php = 1ff6dc89ca887f21adb7d475d5562a5d0f74db7ae63871271dc6c009e371730e
+sounds/en/agent-login.sln = 46e8c81b7859c148afcff1a71b4574d8d061e152058a903d524df3b1f964a0d2
+sounds/en/agent-logoff.sln = aac25161a92232e3d9436561810e8494264120d7e6f1c7a64cc495608fb4e0a7
+sounds/en/exited-vm-will-be-transfered.sln = f0b9a6d86d63795272db643338274e24d45eacccebe69a437910cc8d5e9bdaf2
+sounds/en/featurecode.sln = 2aeb63862f07bcd3f24db9687270a456e8b538fd70ed00097a3bbcf5b429124e
+sounds/en/incoming-call-1-accept-2-decline.sln = e360cb7e91f9e11142205a21082966ea72734beae4d4118a54c85ccac69b8fa8
+sounds/en/incoming-call-no-longer-avail.sln = 559d61ed298664b8a289b4cbf4cde4bc93b809b53d1d6108f1f426ee3392a844
+sounds/en/line-busy-transfer-menu.sln = f698d2e4af3a2d503db481a91b3919530ff373885771495094aa337525676562
+sounds/en/please-enter-your-extension-then-press-pound.sln = 3a0077a3abd9c2e5903e73f284e0baa079be82ae165d5cc032fa8942eeadec14
+sounds/en/you-will-be-transfered-menu.sln = f49dadccc998dadd5b4700683c4448b3e49ecfab658dbd4e1967c69122209ead
+views/ampusers/bootnav.php = 43c07dfc55eac51358b55bf76df95839ae867856a29eb1cc8cf374d7b7c3ffc9
+views/dahdichandids/bootnav.php = 4dc88e4b624b19d56e08931fb784fdbfd16faed166676feceba19e0cdf62b43d
+views/dahdichandids/changrid.php = 1ac579da9b049de6f1b5e650f342d412d3ca193133c6b06fd45c82811529ecf1
+views/dahdichandids/didForm.php = b848dc05f5ee2a36cfc9ad84abcb7b383b345a13cb9fb1952342989d3dc40ea4
+views/dahdichandids/general.php = c16debbca64d8f9a757c9e22285c65d8c9e91a6eb42f9228a8f5baca63857c1e
+views/dahdichandids/view.php = 4b102110dbc9a6de59dc494ab24e8c804d54eca5f26bf08b3cad97d3c645bd76
+views/devices.php = da8412a717fba295ebc5589895ffbc160e66cf7ee5d9c7259ba52444d38ad77f
+views/did/advanced_form.php = c3f8787fa0b46649d2f5c30e4093eb3ad92c739973141b35a32f6ffbf3426252
+views/did/basic_form.php = 13d94eb5ff25ecb03e2206b653bd925c5084b092a624b9afa68d1b7a936368b6
+views/did/didgrid.php = 23f005111c81223f4b0acd1faa905eca58bba9fbd0963909405655ff6f5775ca
+views/did/rnav.php = b570cf3b453c921c7a2e24cd83f24d75975af125d4be7bfdf4b13ec6482e7c0c
+views/extensions.php = 53c581efa35b898d43f0923cfc25af8fe8781d740d94591efd77a16cecbe0da9
+views/quickCreate.php = 5de78e603b71d4588539984f33a705cb34d10a823705714b9434c1f65e05bbba
+views/rnav.php = 3856d02751f35cf99ab971176ec9fb77a59ae4b9518e8996113ebf49ebfe19c0
+views/routing/bootnav.php = a17ecf66b012bb7c1556e444505d7fb970d377823d23eda74ed9adcce7a1efb4
+views/routing/form.php = 67677bdea43c54ef456be8f433b02c84c5d6fc3cc2ece888bc3a9907c3a381d7
+views/routing/grid.php = fcef4384aa697b650148a242c241f0bbb00e43332f8eacd1e6583b952c7c3177
+views/routing/moh.php = c6d5898f63650c298507323f4e528acbf7460ab9a6d783b18ba71dfb364a08ef
+views/routing/timecond.php = 57e25862bd40bd74df9503ba2d6f25d15de9594f0c3a94d528f8b0a0c75ecc01
+views/trunks/bootnav.php = 8d27b0d28adfb23f40d43bd26f3ecc9ac56705fd8763f4243247a04d7e045194
+views/trunks/custom.php = 1cf010aceb424620761ba06f30542765064da2d7fda0aa8be0af7e95639618a7
+views/trunks/dahdi.php = ba757eb88cf650cc356023b7de936d040a15a6947edf78994ada14984dfa6658
+views/trunks/dundi.php = 28b0c0c0803fac42692e37e6d80877775e2320ef2910d7d819974e5be9009c89
+views/trunks/header.php = 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
+views/trunks/main.php = 69378151eab152c528b31ad5360b8958adb915211e33ba3ce022926f077d731f
+views/trunks/misdn.php = 25bb2692f6bd16a20ef1c3b0fa3d4b8ab9887d31b1b46613609700835c470e4c
+views/trunks/pjsip.php = dfcfc93dd3ea200cbb93decd3dfe025c2fc056376cb0f76c40be1544fadf4ab9
+views/trunks/sip.php = 9593b1c0d3310062306b8f5c5e87c000388ecf679dec849f4e357884298ca732
+views/trunks/trunk_footer.php = c6c6d7fa18b49c4f824f1e7b7e76265c690fceee9fb668627863104654b70f27
+views/trunks/trunk_header.php = 6533515c22097626561e0a3f840b1254a93c0fe82e0bec0cc6072651ddf86e8a
+views/trunks/trunkgrid.php = db3f08baab5df227f709ffa3c35d06f21acca8c6f64739ae9651d9eade95ce11
+views/trunks/zap.php = d56a3a15dda7b4879da85ce5c6f9f81113bb4ae362ad42e4db2f8ceb6c991c06
+views/users.php = e2da6ea6bc8a89cf5c6cc02e861a53dc960ede803ebf53015be0bb0efb727a81
+;# End
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.14 (GNU/Linux)
+
+iQIcBAEBAgAGBQJYo5WsAAoJEIbOh3Rp0urZyBYP/izL6/3+FqdsZ/j8exP15soX
+w8+z4DEwaJA3wRpHXcX38UsXQDT9rc9AiKjTcyCzeSiv6wXIiE7qnv0zdKbrr32o
+88cJIdulYZaKNuFj/TLvRssxpVoWry56SEczxGeG6Fqu7z6FgI1AAyL5uktC8s34
+DSO6DVtp8xerLWfCqe5H/cXSO89jc0ZqOmJOvd91xpD3fky2Mr3eVIQCtBuPMqMy
+nkNfTrQ/3qHfqqFHwd4iztHtGPgFUNtqOJ6BaKV7t1FJa/V3dL1vi1ZqPtZH5lmv
+wGqpo6tiAagXsHWl3SgUcv5baSLiYOGdanCzEnX0LIVVXWN/eoZvOuI2lTPGu5UT
+VQb7U23bJDXQ5FzffpG2TquduVzsudhANOWSgmkux2zn7tF48684LsMcZtzkU403
+j+jJh2GvyG+663QnBHeC4vymUQLVzIfB+OpZpLlXVgFAiEKSfuKf5B9IKt8ifX2i
+ROtKdzLKiWYvh6qM6pvkiLw06ek+a1D0Uoq/5UDkkOnt/tg7uCB8A4tKbY+16OSl
+hqNuC0NoDTUek+WV1bv0NNUV7MgFfMjQZChdBRH7JwFl+PYBPE9ecuhRuEy1PNyQ
+3YY4prIcNMNkkKS+meveAEy1DU8oXpsu8KH7aH3iQw/87bYNM6puXdmtqP9n87zo
+wXTLG95qjZAx/zO3KAov
+=SwJm
+-----END PGP SIGNATURE-----

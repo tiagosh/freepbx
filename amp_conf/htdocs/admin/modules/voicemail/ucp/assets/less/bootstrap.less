@@ -1,0 +1,215 @@
+#module-page-voicemail{
+	.supported-formats {
+		border: 1px dashed;
+		border-radius: 10px;
+		margin-top: 5px;
+		background-color: #eaeaea;
+		overflow: hidden;
+		width: 58%;
+		padding: 5px;
+		font-style: italic;
+		margin: auto;
+		font-size: 90%;
+		text-align: center;
+	}
+	.vm-playback {
+		display: none;
+	}
+	.recording-controls {
+	    display: none;
+	}
+	.jp-record-wrapper {
+	    cursor:pointer;
+	}
+	.greeting-control {
+		margin-top: 5px;
+		padding: 5px;
+		@media only screen and (max-width : 991px) {
+			border: 1px dashed;
+			background-color: #eaeaea;
+		}
+	    .jp-audio {
+	        cursor:move;
+	    }
+	}
+	.greet-hidden {
+	    display:none;
+	}
+
+	.bar {
+	    height: 18px;
+	    background: green;
+	}
+	.filedrop {
+		border: 1px dashed;
+		height: 60px;
+		border-radius: 10px;
+		margin-top: 5px;
+		background-color: #eaeaea;
+		overflow: hidden;
+		.message {
+			width: 90%;
+			text-align: center;
+			margin-top: 10px;
+			position: absolute;
+			font-weight: bold;
+			font-size: 120%;
+		}
+		.pbar {
+			height: 100%;
+			width: 0%;
+			background-color: #5cb85c;
+		}
+	}
+	.vmsettings {
+	    background-color: aliceblue;
+	    border-radius: 10px;
+	    padding: 10px;
+	    width: 370px;
+	    @media only screen and (max-width : 991px) {
+	        width: 100%;
+	    }
+	}
+	.separator-list {
+	    height: 15px;
+	}
+	.settings-list {
+	    background-color: aliceblue;
+	}
+	.settings.active {
+	    background-color: #428bca;
+	    border-radius: 2px;
+	    a {
+	        color: #ffffff;
+	    }
+	    a:hover {
+	        text-decoration: none;
+	        background-color: #428bca;
+	        color: #ffffff;
+	    }
+	}
+	.settings-inner {
+	    i {
+			font-size: 120%;
+			color: #999999;
+			float: right;
+			margin-top: 1px;
+	    }
+	}
+	.settings {
+	    a {
+	        position: relative;
+	        display: block;
+	        padding: 3px 8px;
+	        border-radius: 2px;
+	    }
+	    a:hover {
+	        text-decoration: none;
+	        background-color: #eeeeee;
+	        color: #2a6496;
+	    }
+	}
+	.folder-list {
+	    background-color: aliceblue;
+	}
+	.message-header {
+	    background-color: aliceblue;
+	}
+	.message-table {
+	    font-size: 90%;
+	}
+	.vm-message {
+	    cursor:move;
+	    opacity: 0.99;
+	    color: black;
+	    background-color: rgba(255, 255, 255, 0.5);
+	    a {
+	        color: black;
+	        text-decoration: none;
+	    }
+			.cid {
+				.clickable {
+					color: #428bca;
+					text-decoration: none;
+					cursor: pointer;
+				}
+				.clickable:hover {
+					text-decoration: underline;
+				}
+			}
+	}
+	.msginfo {
+	    position: absolute;
+	}
+	.msginfo.date {
+	    left:0px;
+	}
+	.msginfo.time {
+	    left:10px;
+	}
+	.msginfo.callerid {
+	    left:20px;
+	}
+	.msginfo.priority {
+	    left:30px;
+	}
+	.msginfo.mailbox {
+	    left:40px;
+	}
+	.vm-temp {
+	    background-color: rgba(255, 255, 255, 0.5);
+	}
+	.folder {
+	    margin-bottom: 1px;
+	    font-size: 85%;
+	    .badge {
+	        float:right;
+	    }
+	    a {
+	        position: relative;
+	        display: block;
+	        padding: 3px 8px;
+	        border-radius: 2px;
+	    }
+	    a:hover {
+	        text-decoration: none;
+	        background-color: #eeeeee;
+	        color: #2a6496;
+	    }
+	}
+	.folder.active {
+	    background-color: #428bca;
+	    border-radius: 2px;
+	    a {
+	        color: #ffffff;
+	    }
+	    a:hover {
+	        text-decoration: none;
+	        background-color: #428bca;
+	        color: #ffffff;
+	    }
+	}
+	.mailbox-header {
+	    font-size:400%;
+	}
+	.filedrop.hover {
+		background-color: #585858;
+		color: #FFFFFF;
+	}
+
+	.table > tbody > tr > td.actions {
+	    font-size: 159%;
+	    padding: 1px;
+	    div {
+	        margin-left: 10px;
+	        margin-top: 3px;
+	        a {
+	            cursor: pointer;
+	            letter-spacing: 2px;
+	        }
+	        a:hover {
+	            color:#428bca;
+	        }
+	    }
+	}
+}
